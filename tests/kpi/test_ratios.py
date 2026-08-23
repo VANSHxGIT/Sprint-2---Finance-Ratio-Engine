@@ -1,4 +1,4 @@
-from src.Analytics.ratios import (
+from src.Analytics.ratio import (
     net_profit_margin,
     operating_profit_margin,
     return_on_equity,
