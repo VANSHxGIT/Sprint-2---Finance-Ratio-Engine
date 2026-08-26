@@ -1,28 +1,32 @@
-import sqlite3
 from pathlib import Path
+import sqlite3
 
-DB_PATH = Path("database/nifty100.db")
+DB_PATH = Path(
+    r"C:\Users\vansh\OneDrive\Desktop\Mutual Fund Analytics\sql\mutual_fund.db"
+)
 
-if not DB_PATH.exists():
-    raise FileNotFoundError(f"Database not found: {DB_PATH}")
+print("Database exists:", DB_PATH.exists())
+print("Database path:", DB_PATH)
 
 conn = sqlite3.connect(DB_PATH)
 
-tables = conn.execute("""
+cursor = conn.cursor()
+
+cursor.execute("""
     SELECT name
     FROM sqlite_master
-    WHERE type='table'
+    WHERE type = 'table'
     ORDER BY name
-""").fetchall()
+""")
+
+tables = cursor.fetchall()
 
 print("\nDATABASE TABLES")
 print("=" * 50)
 
 for (table,) in tables:
-    count = conn.execute(
-        f'SELECT COUNT(*) FROM "{table}"'
-    ).fetchone()[0]
-
-    print(f"{table:<25} {count:>8} rows")
+    cursor.execute(f'SELECT COUNT(*) FROM "{table}"')
+    count = cursor.fetchone()[0]
+    print(f"{table:<35} {count:>8} rows")
 
 conn.close()
