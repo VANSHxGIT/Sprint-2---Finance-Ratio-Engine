@@ -1,32 +1,40 @@
-from pathlib import Path
 import sqlite3
+from pathlib import Path
 
 DB_PATH = Path(
     r"C:\Users\vansh\OneDrive\Desktop\Mutual Fund Analytics\sql\mutual_fund.db"
 )
 
-print("Database exists:", DB_PATH.exists())
-print("Database path:", DB_PATH)
-
 conn = sqlite3.connect(DB_PATH)
 
-cursor = conn.cursor()
+tables = [
+    "companies",
+    "profitandloss",
+    "balancesheet",
+    "cashflow",
+    "analysis",
+]
 
-cursor.execute("""
-    SELECT name
-    FROM sqlite_master
-    WHERE type = 'table'
-    ORDER BY name
-""")
+for table in tables:
+    print("\n" + "=" * 70)
+    print(table.upper())
+    print("=" * 70)
 
-tables = cursor.fetchall()
+    try:
+        rows = conn.execute(
+            f'PRAGMA table_info("{table}")'
+        ).fetchall()
 
-print("\nDATABASE TABLES")
-print("=" * 50)
+        for row in rows:
+            print(f"{row[1]:35} {row[2]}")
 
-for (table,) in tables:
-    cursor.execute(f'SELECT COUNT(*) FROM "{table}"')
-    count = cursor.fetchone()[0]
-    print(f"{table:<35} {count:>8} rows")
+        count = conn.execute(
+            f'SELECT COUNT(*) FROM "{table}"'
+        ).fetchone()[0]
+
+        print(f"\nRows: {count}")
+
+    except sqlite3.Error as e:
+        print(f"ERROR: {e}")
 
 conn.close()
