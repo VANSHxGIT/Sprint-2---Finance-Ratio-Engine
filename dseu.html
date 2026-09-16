@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A basic webpage demonstrating many HTML elements.">
+    <title>Comprehensive HTML Elements Demo</title>
+    <style>
+        body {
+            font-family: system-ui, sans-serif;
+            line-height: 1.6;
+            margin: 0 auto;
+            max-width: 900px;
+            padding: 20px;
+        }
+
+        header,
+        footer {
+            background: #eee;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        nav {
+            background: #ddd;
+            padding: 10px;
+        }
+
+        nav a {
+            margin-right: 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        section {
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 8px;
+        }
+
+        .highlight {
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Semantic Header -->
+    <header>
+        <h1>Welcome to the HTML Elements Showcase</h1>
+        <p>This page demonstrates a wide variety of standard HTML5 tags.</p>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#text">Text Formatting</a>
+        <a href="#lists">Lists</a>
+        <a href="#media">Media</a>
+        <a href="#tables">Tables</a>
+        <a href="#forms">Forms</a>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main>
+
+        <!-- Section 1: Headings and Text Formatting -->
+        <section id="text">
+            <article>
+                <h2>Headings & Inline Text Elements</h2>
+                <h3>This is an H3</h3>
+                <h4>This is an H4</h4>
+                <h5>This is an H5</h5>
+                <h6>This is an H6</h6>
+
+                <p>This is a standard <strong>paragraph</strong>. Here is some <em>emphasized text</em>, some <b>bold
+                        text</b>, and some <i>italicized text</i>. You can also use <mark>highlighted text</mark>,
+                    <del>deleted text</del>, and <ins>inserted text</ins>.
+                </p>
+
+                <p>Water is H<sub>2</sub>O (subscript), and Einstein said E=mc<sup>2</sup> (superscript).</p>
+
+                <p>Here is an <a href="https://example.com" target="_blank" rel="noopener">external link</a> and an
+                    <abbr title="HyperText Markup Language">HTML</abbr> abbreviation.
+                </p>
+
+                <p>She said, <q>This is a short inline quote.</q></p>
+
+                <address>
+                    Written by <a href="mailto:webmaster@example.com">John Doe</a>.<br>
+                    Visit us at: Box 564, Disneyland.
+                </address>
+            </article>
+        </section>
+
+        <hr> <!-- Horizontal Rule -->
+
+        <!-- Section 2: Code and Blockquotes -->
+        <section>
+            <h2>Block Elements</h2>
+            <blockquote>
+                <p>This is a blockquote. It is used to quote text from another source, usually spanning multiple lines.
+                </p>
+                <cite>- A famous person</cite>
+            </blockquote>
+
+            <p>Here is some inline <code>computer code</code>, and below is a preformatted code block:</p>
+            <pre>
+function helloWorld() {
+    console.log("Hello, World!");
+}
+            </pre>
+        </section>
+
+        <!-- Section 3: Lists -->
+        <section id="lists">
+            <h2>Lists</h2>
+
+            <h3>Unordered List</h3>
+            <ul>
+                <li>Apples</li>
+                <li>Bananas</li>
+                <li>Cherries</li>
+            </ul>
+
+            <h3>Ordered List</h3>
+            <ol>
+                <li>First step</li>
+                <li>Second step</li>
+                <li>Third step</li>
+            </ol>
+
+            <h3>Description List</h3>
+            <dl>
+                <dt>HTML</dt>
+                <dd>The standard markup language for documents designed to be displayed in a web browser.</dd>
+                <dt>CSS</dt>
+                <dd>A style sheet language used for describing the presentation of a document.</dd>
+            </dl>
+        </section>
+
+        <!-- Section 4: Media -->
+        <section id="media">
+            <h2>Media & Graphics</h2>
+
+            <figure>
+                <img src="https://via.placeholder.com/300x150" alt="A placeholder image" width="300" height="150"
+                    loading="lazy">
+                <figcaption>Fig.1 - A placeholder image using the figure and figcaption tags.</figcaption>
+            </figure>
+
+            <h3>Audio</h3>
+            <audio controls>
+                <source src="dummy.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+
+            <h3>Video</h3>
+            <video width="320" height="240" controls>
+                <source src="dummy.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </section>
+
+        <!-- Section 5: Tables -->
+        <section id="tables">
+            <h2>Tables</h2>
+            <table>
+                <caption>Monthly Savings</caption>
+                <thead>
+                    <tr>
+                        <th>Month</th>
+                        <th>Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>January</td>
+                        <td>$100</td>
+                    </tr>
+                    <tr>
+                        <td>February</td>
+                        <td>$80</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td>Total</td>
+                        <td>$180</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+
+        <!-- Section 6: Forms -->
+        <section id="forms">
+            <h2>Forms & Inputs</h2>
+            <form action="#" method="post">
+                <fieldset>
+                    <legend>Personal Information</legend>
+
+                    <label for="fname">First name:</label>
+                    <input type="text" id="fname" name="fname" placeholder="John" required><br><br>
+
+                    <label for="pwd">Password:</label>
+                    <input type="password" id="pwd" name="pwd"><br><br>
+
+                    <p>Choose your favorite web language:</p>
+                    <input type="radio" id="html" name="fav_language" value="HTML">
+                    <label for="html">HTML</label><br>
+                    <input type="radio" id="css" name="fav_language" value="CSS">
+                    <label for="css">CSS</label><br><br>
+
+                    <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                    <label for="vehicle1"> I have a bike</label><br><br>
+
+                    <label for="cars">Choose a car:</label>
+                    <select id="cars" name="cars">
+                        <optgroup label="Swedish Cars">
+                            <option value="volvo">Volvo</option>
+                            <option value="saab">Saab</option>
+                        </optgroup>
+                        <optgroup label="German Cars">
+                            <option value="mercedes">Mercedes</option>
+                            <option value="audi">Audi</option>
+                        </optgroup>
+                    </select><br><br>
+
+                    <label for="message">Message:</label><br>
+                    <textarea id="message" name="message" rows="4" cols="30"></textarea><br><br>
+
+                    <label for="vol">Volume (Range):</label>
+                    <input type="range" id="vol" name="vol" min="0" max="50"><br><br>
+
+                    <label for="bday">Birthday:</label>
+                    <input type="date" id="bday" name="bday"><br><br>
+
+                    <button type="submit">Submit Form</button>
+                    <button type="reset">Reset</button>
+                </fieldset>
+            </form>
+        </section>
+
+        <!-- Section 7: Interactive Elements -->
+        <section id="interactive">
+            <h2>Interactive Elements</h2>
+            <details>
+                <summary>Click here to reveal hidden content</summary>
+                <p>This content was hidden inside a <code>&lt;details&gt;</code> element! The heading is inside a
+                    <code>&lt;summary&gt;</code> tag.
+                </p>
+            </details>
+        </section>
+
+    </main>
+
+    <!-- Semantic Footer -->
+    <footer>
+        <p>&copy; 2026 HTML Showcase Page. Built for learning purposes.</p>
+    </footer>
+
+</body>
+
+</html>
